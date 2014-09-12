@@ -1,5 +1,6 @@
 import QtQuick 2.2
-
+import QtQuick.Controls 1.1
+import Camera1394 1.0
 Rectangle
 {
     id: tabwidget
@@ -40,7 +41,7 @@ Rectangle
         {
             index:1
             picSrc: "ico_dsmain.png"
-            btnText:"木马查杀"
+            btnText:"粗选相机"
             onClicked:toolbar.current=btnIndex
         }
         ToolBtn
@@ -115,23 +116,78 @@ Rectangle
             {
             }
         }
+
+
         MainWidget
-        {
-            Rectangle
-            {
-                anchors.fill: parent
-                anchors.margins: 50
-                color:"#99FF0000"
-                Text
                 {
-                    font.pointSize: 50
-                    font.family: "微软雅黑"
-                    color:"#FFFFFF"
-                    anchors.centerIn: parent
-                    text:"十步杀一人"
+                    Rectangle
+                    {
+                        anchors.fill: parent
+                        anchors.margins: 50
+                        color:"#99FF0000"
+                        Camera1394 {
+                            id: camera1394test
+                            anchors.rightMargin: -23
+                            anchors.bottomMargin: -20
+                            anchors.leftMargin: 23
+                            anchors.topMargin: 20
+                            anchors.fill: parent
+                        }
+                        Timer{
+                            id: cameratimer
+                            interval: 100;
+                            repeat: true
+                            onTriggered: {
+                                time.text = Date().toString()
+                                camera1394test.updatecamera()
+                            }
+                        }
+                        Button {
+                            id: button1
+                            text: "Startcamera"
+                            iconSource: qsTr("")
+                            activeFocusOnPress: false
+                            checked: false
+                            anchors.left: parent.left
+                            anchors.leftMargin: 0
+                            anchors.top: parent.top
+                            anchors.topMargin: 0
+                            onClicked:{
+                                camera1394test.startcamera()
+                                cameratimer.start()
+                            }
+
+                        }
+                        Text {
+                            id: time
+                            text: "time"
+                            anchors.right: parent.right
+                            anchors.rightMargin: 0
+                            anchors.top: parent.top
+                            anchors.topMargin: 0
+                            style: Text.Raised
+                            font.pointSize: 15
+                        }
+                    }
                 }
-            }
-        }
+
+//        MainWidget
+//        {
+//            Rectangle
+//            {
+//                anchors.fill: parent
+//                anchors.margins: 50
+//                color:"#99FF0000"
+//                Text
+//                {
+//                    font.pointSize: 50
+//                    font.family: "微软雅黑"
+//                    color:"#FFFFFF"
+//                    anchors.centerIn: parent
+//                    text:"十步杀一人"
+//                }
+//            }
+//        }
         MainWidget
         {
             Rectangle

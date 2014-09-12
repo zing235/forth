@@ -1,3 +1,22 @@
+INCLUDEPATH+="D:/Program Files/mingopencv/include"
+INCLUDEPATH+="d:/Program Files/Allied Vision Technologies/UniversalPackage/UniAPI/include"
+
+
+LIBS+="D:/Program Files/mingopencv/lib/libopencv_calib3d249.dll.a"
+LIBS+="D:/Program Files/mingopencv/lib/libopencv_contrib249.dll.a"
+LIBS+="D:/Program Files/mingopencv/lib/libopencv_core249.dll.a"
+LIBS+="D:/Program Files/mingopencv/lib/libopencv_features2d249.dll.a"
+LIBS+="D:/Program Files/mingopencv/lib/libopencv_flann249.dll.a"
+LIBS+="D:/Program Files/mingopencv/lib/libopencv_gpu249.dll.a"
+LIBS+="D:/Program Files/mingopencv/lib/libopencv_highgui249.dll.a"
+LIBS+="D:/Program Files/mingopencv/lib/libopencv_imgproc249.dll.a"
+LIBS+="D:/Program Files/mingopencv/lib/libopencv_legacy249.dll.a"
+LIBS+="D:/Program Files/mingopencv/lib/libopencv_ml249.dll.a"
+LIBS+="D:/Program Files/mingopencv/lib/libopencv_objdetect249.dll.a"
+LIBS+="D:/Program Files/mingopencv/lib/libopencv_video249.dll.a"
+
+LIBS+="d:/Program Files/Allied Vision Technologies/UniversalPackage/UniAPI/lib/Secure/UniControl.lib"
+LIBS+="d:/Program Files/Allied Vision Technologies/UniversalPackage/UniAPI/lib/Secure/UniTransform.lib"
 # Add more folders to ship with the application, here
 folder_01.source = qml/test360
 folder_01.target = qml
@@ -7,7 +26,8 @@ DEPLOYMENTFOLDERS = folder_01
 QML_IMPORT_PATH =
 
 # The .cpp file which was generated for your project. Feel free to hack it.
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    camera1394.cpp
 
 # Installation path
 # target.path =
@@ -17,5 +37,9 @@ include(qtquick2applicationviewer/qtquick2applicationviewer.pri)
 qtcAddDeployment()
 
 OTHER_FILES += \
-    qml/test360/contents/Menuzz.qml
+    qml/test360/contents/Menuzz.qml \
+    qml/test360/contents/Camera1394.1qml
+
+HEADERS += \
+    camera1394.h
 
