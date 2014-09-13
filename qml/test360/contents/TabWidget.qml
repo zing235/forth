@@ -94,7 +94,7 @@ Rectangle
         width:tabwidget.width
         anchors.top: toolbar.bottom
         anchors.topMargin: -5
-        height: 500
+        height: parent.height
         color:"white"
 
         property int current: 0
@@ -123,7 +123,7 @@ Rectangle
                     Rectangle
                     {
                         anchors.fill: parent
-                        anchors.margins: 50
+                        anchors.margins: 10
                         color:"#99FF0000"
                         Camera1394 {
                             id: camera1394test
@@ -193,7 +193,7 @@ Rectangle
             Rectangle
             {
                 anchors.fill: parent
-                anchors.margins: 50
+                anchors.margins: 10
                 color:"#BB00FF00"
                 Text
                 {
@@ -210,7 +210,7 @@ Rectangle
             Rectangle
             {
                 anchors.fill: parent
-                anchors.margins: 50
+                anchors.margins: 10
                 color:"#990000FF"
                 Text
                 {
@@ -227,7 +227,7 @@ Rectangle
             Rectangle
             {
                 anchors.fill: parent
-                anchors.margins: 50
+                anchors.margins: 10
                 color:"#FFFF9900"
                 Text
                 {
@@ -244,7 +244,7 @@ Rectangle
             Rectangle
             {
                 anchors.fill: parent
-                anchors.margins: 50
+                anchors.margins: 10
                 color:"#FF00FFFF"
                 Text
                 {
@@ -261,7 +261,7 @@ Rectangle
             Rectangle
             {
                 anchors.fill: parent
-                anchors.margins: 50
+                anchors.margins: 10
                 color:"#99FF00FF"
                 Text
                 {
@@ -278,7 +278,7 @@ Rectangle
             Rectangle
             {
                 anchors.fill: parent
-                anchors.margins: 50
+                anchors.margins: 10
                 color:"#FFC0C0C0"
                 Text
                 {

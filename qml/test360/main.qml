@@ -4,18 +4,18 @@ import QtQuick.Controls 1.1
 
 Rectangle {
      id: page
-     width: 900; height: 600
+     width: 1366; height: 768
      color: "#00000000"
 
      Image {
          id: skinpic
          x: 0
          y: 0
-         width: 900
-         height: 600
+         width: parent.width
+         height: parent.height
          fillMode: Image.TileHorizontally
-         sourceSize.height: 600
-         sourceSize.width: 800
+//         sourceSize.height: 600
+//         sourceSize.width: 800
          source: "contents/background_mainwnd.jpg"
 
          Text {
@@ -25,7 +25,7 @@ Rectangle {
              width: 125
              height: 12
              color: "#ffffff"
-             text: "360安全卫士"
+             text: "360安全卫士123"
              font.pointSize: 9
              font.family: "微软雅黑"
              font.pixelSize: 12
@@ -52,8 +52,8 @@ Rectangle {
              id: mainwindow
              x: 0;
              y: 40;
-             width:900
-             height:600
+             width:parent.width
+             height:parent.height
          }
 
          Image
